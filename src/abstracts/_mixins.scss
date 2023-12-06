@@ -1,0 +1,56 @@
+@use '../abstracts/variables' as v;
+/*
+    This file containst the mixin functions.
+*/
+/* #region -- Universal Font import with mixin 'nd variables -- */
+@mixin font-face($family, $file, $path, $svg, $weight: 500, $style: normal) {
+    @font-face {
+        font-family: $family;
+        src: url(($path + $file + '.ttf'));
+        //src: url(($path + $file + '.eot?#iefix')) format('embedded-opentype'), url(($path + $file + '.woff')) format('woff'), url(($path + $file + '.ttf')) format('truetype'), url(($path + $file + '.svg##{$svg}')) format('svg');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+/* #endregion */
+
+/* #region Theme Color `Generator` */
+@mixin generateColors($palettes) {
+    @each $paletta_name, $paletta_cons in $palettes {
+        body[color-theme=#{$paletta_name}] {
+            @each $theme_color_name, $theme_color_code in $paletta_cons {
+                --se-#{$theme_color_name}: #{$theme_color_code};
+            }
+        }
+    }
+}
+
+;
+/* #endregion */
+
+/* #region Light -/- Dark mode theme wrapper */
+@mixin themify($themes) {
+    @each $name, $values in $themes {
+        body[mode=#{$name}] {
+            $theme-map: $values !global;
+            @content;
+        }
+    }
+}
+
+@mixin themed() {
+    @each $theme, $map in v.$modes {
+        body[mode=#{$theme}] & {
+            $theme-map: () !global;
+
+            @each $key, $submap in $map {
+                $value: map-get(map-get(v.$modes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+/* #endregion*/

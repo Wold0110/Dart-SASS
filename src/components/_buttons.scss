@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+
+@include m.themify(v.$modes) {
+    .primary {
+        color: f.t('fg');
+        background-color: f.t('primary');
+    }
+
+    .secondary {
+        color: f.t('fg');
+        background-color: f.t('secondary');
+    }
+
+    .ascent {
+        color: f.t('fg');
+        background-color: f.t('ascent');
+    }
+}

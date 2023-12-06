@@ -1,0 +1,12 @@
+@use '../abstracts/mixins' as m;
+/*
+    This file containst the function functions.
+    Function gives a return value.
+*/
+
+/* #region ~Theme */
+@function t($key)
+{
+    @return map-get(m.$theme-map, $key);
+}
+/* #endregion */

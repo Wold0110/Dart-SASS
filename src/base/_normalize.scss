@@ -1,0 +1,60 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+/*
+    This file contians "the big default" base setting for website.
+    There I like body , webscroll, main dependencies.
+*/
+*, html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+@include m.themify(v.$modes) {
+    background-color: f.t('bg');
+    color: f.t('fg');
+}
+
+body {
+    font-size: v.$font_base_size;
+    font-family: v.$content_font,'Franklin Gothic Medium', sans-serif;
+    font-weight: 500;
+    position: relative;
+    overflow-x: hidden;
+    min-width: auto;
+    max-height: 98.5vh;
+
+    &:has(.footer) {
+        min-height: 100.12vh;
+    }
+}
+
+::-webkit-scrollbar {
+    background: var(--se-primary);
+    height: 12px;
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--se-ascent);
+}
+
+// Tags
+a {
+    user-select: none;
+    cursor: pointer;
+    font-weight: 300;
+    font-style: italic;
+
+    &:not([href]) {
+        color: inherit;
+        font-style: inherit;
+    }
+
+    @include m.themed() {
+        color: f.t('link');
+    }
+}

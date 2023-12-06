@@ -1,0 +1,108 @@
+/*
+    This file is used to store the styles variables.
+*/
+
+/* #region -- Font Variable -- */
+$font_base_size: 1rem;      // Default Font Size
+$spc: .25rem;               // Font Sizes grow Rates
+
+$line_height: 1.2;          // Default Line Size
+$spc: .2;                   // Line-Height grow rates
+
+$content_font: 'Poppins';
+$label_font: 'Roboto';
+$obselete_font: 'Black Ops One';
+/* #endregion */
+
+
+/* #region Header_Style */
+$header_max_height: 92px;
+$header_bg: --se;
+$header_font: 'Oswald';
+$header_font_color: #D9D9D9; 
+/* #endregion */
+
+/* #region light -/- dark mode */
+$modes: (
+    light: (
+        bg: var(--se-bg_light),
+        fg: var(--se-fg_light),
+        link: var(--se-blue),
+        border: var(--se-green),
+        primary: var(--se-red),
+        secondary: var(--se-blue),
+        ascent: var(--se-yellow)
+    ),
+    dark: (
+        bg: var(--se-bg_dark),
+        fg: var(--se-fg_dark),
+        link: var(--se-orange),
+        border: var(--se-green),
+        primary: var(--se-red),
+        secondary: var(--se-blue),
+        ascent: var(--se-yellow)
+    ),
+);
+/* #endregion */
+
+/* #region -- Themes_Color_Palette -- */
+/*  @example
+    theme-name: ( 
+    'red': '#', 
+    'green': '#', 
+    'yellow': '#',
+    'blue': '#', 
+    'purple': '#',
+    'black': '#',
+    'white': '#',
+    'bg_light': '#',
+    'fg_light' : '#',
+    'bg_dark': '#',
+    'fg_dark': '#'
+    ), 
+*/
+$palettes: ( 
+    default: ( 
+    'red': '#BF0000',
+    'orange': '#ff6a00',
+    'green': '#00BF00', 
+    'yellow': '#FFD800',
+    'blue': '#0000BF', 
+    'purple': '#B200FF',
+    'black': '#000000',
+    'white': '#FFFFFF',
+    'bg_light': '#FAFAFA',
+    'fg_light' : '#404040',
+    'bg_dark': '#222222',
+    'fg_dark': '#ECEFF1'
+    ), 
+    nordic: ( 
+    'red': '#BF616A', 
+    'orange': '#D08770', 
+    'yellow': '#EBCB8B', 
+    'green': '#A3BE8C', 
+    'blue': '#5E81AC',
+    'purple': '#B48EAD',
+    'white': '#F8F8F8',
+    'black': '#030303',
+    'bg_dark': '#2E3440',
+    'fg_dark': '#D8DEE9',
+    'bg_light': '#E5E9F0',
+    'fg_light': '#2E3440'
+    ),
+    gruvbox: ( 
+    'red': '#CC241D', 
+    'orange': '#D65D0E',
+    'green': '#98971A', 
+    'yellow': '#D79921',
+    'blue': '#458588', 
+    'purple': '#B16286',
+    'black': '#1D2021',
+    'white': '#F5F5F5',
+    'bg_light': '#FBF1C7',
+    'fg_light' : '#3C3836',
+    'bg_dark': '#282828',
+    'fg_dark': '#EBDBB2'
+    ), 
+);
+/* #endregion */

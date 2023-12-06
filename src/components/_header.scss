@@ -1,0 +1,66 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+header {
+    font-family: v.$header_font, Arial, monospace;
+    font-weight: 700;
+    font-display: optional;
+
+    & img:has(#o_dev),
+    & img:has(.logo),
+    & svg:has(#o_dev),
+    & svg:has(.logo) {
+        max-height: 6vh;
+        max-width: 6vh;
+        height: 6vh;
+        width: 6vh;
+        aspect-ratio: 1/1;
+    }
+
+    & object:has(#o_dev).text {
+        max-height: 3vh;
+        border: none;
+    }
+
+    & object:has(#o_dev).blind {
+        height: 8vh;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    & o_dev:has(.logo) {
+        max-height: 5.5rem;
+        max-width: 5.5rem;
+        min-height: 3.7rem;
+        min-width: 3.7rem;
+        mask: url('../../img/se_new.svg') no-repeat center;
+        -webkit-mask: url('../../img/se_new.svg') no-repeat;
+        mask-size: auto auto;
+        -webkit-mask-size: 3.7rem 3.7rem;
+    }
+
+    & .navbar-style {
+        border-radius: 1.7rem;
+        padding: .2rem 0;
+        box-shadow: 0px 10px 24px -8px rgba(0,0,0,.3);
+        max-height: v.$header_max_height;
+        height: auto;
+    }
+
+    & .header-text {
+        object-fit: contain;
+        object-position: center;
+        max-height: v.$header_max_height;
+    }
+
+    & .navbar {
+        background-color: var(v.$header_bg) !important;
+        color: v.$header_font_color !important;
+
+        & a, a:is(:hover) {
+            color: v.$header_font_color !important;
+        }
+    }
+}

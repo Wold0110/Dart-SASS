@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as v;
+
+/* Fonts styles */
+@for $i from 0 through 5 {
+    .text-#{$i} {
+        font-size: (v.$font_base_size + ($i*v.$spc) );
+    }
+
+    .title-#{$i} {
+        font-size: ((v.$font_base_size*1.5) + ($i*v.$spc));
+    }
+}
+
+/* Line-height */
+.line-null{
+    line-height: 0;
+}
+
+@for $i from -2 through 4 {
+    .line-#{$i} {
+        line-height: (v.$line_height)+($i * v.$spc);
+    }
+} 

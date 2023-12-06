@@ -1,0 +1,7 @@
+@use '../abstracts/mixins' as m;
+
+@include m.font-face('Roboto', 'Roboto-Regular', '../fonts/Roboto/', '');                   // Use on Labels, headers
+@include m.font-face('Black Ops One', 'BlackOpsOne-Regular', '../fonts/BlackOpsOne/', '');  // Use on Obselette Effect
+@include m.font-face('Poppins', 'Poppins-Regular', '../fonts/Poppins/', '');                // Use as overall Font
+@include m.font-face('Font Awesome', "fa-regular-400",'../font-awesome/webfonts%fa-regular-400.ttf', '');   // Use as Icon getter from css
+@include m.font-face('Oswald', 'Oswald', '../fonts/Oswald/', '');   // Used nowhere xddd

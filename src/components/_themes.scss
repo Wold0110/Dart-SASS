@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+/*
+    There are generate dynamic the team colors -> define colorst to theme_name.
+*/
+@include m.generateColors(v.$palettes);
+
+/*
+    If there any + stuff with theme, there are goes it
+*/
+
